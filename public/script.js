@@ -12,10 +12,18 @@ const copyText = (string) => {
 
 const createLiElement = (array) => {
   const liElement = document.createElement("li");
-  liElement.textContent = array.join(" ");
+  const text = document.createElement("span");
+  const checkBox = document.createElement("input");
+  const copyBtn = document.createElement("button");
+  copyBtn.textContent = "Copy";
+  checkBox.type = "checkbox";
+  text.textContent = array.join(" ");
   liElement.className = "list-item";
-  liElement.addEventListener("click", () => {
-    copyText(liElement.textContent);
+  liElement.appendChild(checkBox);
+  liElement.appendChild(text);
+  liElement.appendChild(copyBtn);
+  copyBtn.addEventListener("click", () => {
+    copyText(text.textContent);
   });
   return liElement;
 };
