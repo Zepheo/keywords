@@ -16,4 +16,4 @@ app.post("/getSentences", (req, res) => {
   res.json(perms);
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("server is running"));
+app.listen(process.env.PORT || 3000, () => console.log("server is running..."));
