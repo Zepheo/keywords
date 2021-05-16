@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { permutations } from "itertools";
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -16,4 +18,4 @@ app.post("/getSentences", (req, res) => {
   res.json(perms);
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("server is running"));
+app.listen(port, () => console.log(`Server is listening to ${port}`));
