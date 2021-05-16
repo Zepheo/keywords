@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.post("/getSentences", (req, res) => {
   console.log(req.body);
   const words = req.body.words;
-  const wordsAsArray = words.split(" ");
+  const wordsAsArray = words.split(",");
   const r = req.body.r === "0" ? wordsAsArray.length : parseInt(req.body.r);
   const perms = [...permutations(wordsAsArray, r)];
 
