@@ -24,6 +24,7 @@ const createLiElement = (array) => {
   liElement.appendChild(copyBtn);
   copyBtn.addEventListener("click", () => {
     copyText(text.textContent);
+    checkBox.checked = true;
   });
   return liElement;
 };
